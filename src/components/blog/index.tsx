@@ -6,6 +6,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import useSWR from "swr";
 
+interface UnsplashImage {
+  id: string;
+  urls: { regular: string };
+  alt_description: string;
+}
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Blog: React.FC = () => {
@@ -48,7 +54,7 @@ const Blog: React.FC = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[800px]">
             {data && data.length > 0 && !(error instanceof Error)
-              ? data.map((image: any) => (
+              ? data.map((image: UnsplashImage) => (
                   <div
                     key={image.id}
                     className="relative w-full h-60 rounded-lg overflow-hidden"
