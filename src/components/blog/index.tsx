@@ -47,7 +47,7 @@ const Blog: React.FC = () => {
             digital presence.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[800px]">
-            {data && data.length > 0 && !error
+            {data && data.length > 0 && !(error instanceof Error)
               ? data.map((image: any) => (
                   <div
                     key={image.id}

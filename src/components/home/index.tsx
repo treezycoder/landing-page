@@ -6,7 +6,7 @@ import ArrowIcon from "@/lib/assets/icons/arrow.icon";
 import { useEffect, useState } from "react";
 
 const Home: React.FC = () => {
-  const { homeRef, active, setActive } = useGlobalState();
+  const { homeRef, active } = useGlobalState();
   const [animate, setAnimate] = useState<boolean>(false);
   useEffect(() => {
     if (active === "home") {

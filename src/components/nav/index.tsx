@@ -8,14 +8,8 @@ import Image from "next/image";
 const list = ["home", "about", "blog", "contact"];
 
 const Nav: React.FC = () => {
-  const {
-    navRef,
-    handleScrollTo,
-    active,
-    setActive,
-    showMobileNav,
-    setShowMobileNav,
-  } = useGlobalState();
+  const { navRef, handleScrollTo, active, showMobileNav, setShowMobileNav } =
+    useGlobalState();
 
   return (
     <nav
